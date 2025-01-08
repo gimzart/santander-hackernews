@@ -1,6 +1,13 @@
 # santander-hackernews
 Repository for developer task based on hacker news api
 
+Starting the application:
+1. Pull the code to local environment
+2. Build the solution
+3. Run the app with default settings
+4. Swagger for the application should appear
+5. Execute request from swagger, postman, curl or browser (https://localhost:7026/BestStories?n=20)
+
 1. The solution contains tests for only one class, in real world project all layers should be covered in unit tests.
 1. 
 
