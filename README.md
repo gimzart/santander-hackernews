@@ -4,10 +4,11 @@ Repository for developer task based on hacker news api
 Starting the application:
 1. Pull the code to local environment
 2. The solution uses .NET 8 with C# 12
-3. Build the solution
-4. Run the app with default settings
-5. Swagger for the application should appear
-6. Execute request from swagger, postman, curl or browser (https://localhost:7026/BestStories?n=20)
+3. It might be necessary to set the Api project as startup
+4. Build the solution 
+5. Run the app with default settings
+6. Swagger for the application should appear
+7. Execute request from swagger, postman, curl or browser (https://localhost:7026/BestStories?n=20)
 
 Justification and things to consider
 1. The solution contains tests for only one class, in real world project all layers should be covered in unit tests.
