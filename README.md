@@ -9,6 +9,7 @@ Starting the application:
 5. Swagger for the application should appear
 6. Execute request from swagger, postman, curl or browser (https://localhost:7026/BestStories?n=20)
 
+Justification and things to consider
 1. The solution contains tests for only one class, in real world project all layers should be covered in unit tests.
 2. The solution does not use a config file, real production ready application should have configuration separated from the code. For this app it would be for example url to external resource and number of concurrent requests to external source.
 3. The approach generates n+1 load per user request on the external resource for getting the data. I have implemented a simple synchronization mechanism that only allows 500 concurrent calls. More approches to handle the problem have been proposed below.
@@ -19,12 +20,13 @@ Starting the application:
 - Domain - should contain the domain objects, for simplicity it contains Item.cs which should be only available in infrastructure layer and then mapped to domain entity for processing
 - Infrastructure - all external dependencies for the solution, could be db access, external services etc.
 
-
 There could be a couple of possible solutions to limit the number of concurrent requests to fetch the items
+
 For single instance system:
 - Rate limiter middleware - this could be setup on the controller level to prevent too many concurrent requests from the users
 - Lock mechanizm - in proces lock that only allows x amount of concurrent requests against the external resource
 - Decreasing the number of concurrent requests with processing in buckets - the strategy would be to divide the available pool of item ids into separate buckets, then each bucket would process items sequentially
+
 For horizontally scaled system:
 - Rate limiter on Api gateway - prevent multiple requests to the resource by having additional layer of API Gateway that would route requestes to application instances
 - Distributed lock - for this purpose Redis could be used which allows to increment a value atomically, then the instances could check the current value and wait if it exceeds the given limit
