@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35521.163
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3E84047A-3B48-45D2-8812-A2D5099A9731}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{69B5B8DE-321A-4D70-9954-A86CD5DFD2E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mizuho.MyEnergySupplierPal.Domain.UnitTest", "test\Mizuho.MyEnergySupplierPal.Domain.UnitTest\Mizuho.MyEnergySupplierPal.Domain.UnitTest.csproj", "{41685A37-0F14-42BD-A3DB-F3FCF7E30752}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mizuho.MyEnergySupplierPal.Application.UnitTest", "test\Mizuho.MyEnergySupplierPal.Application.UnitTest\Mizuho.MyEnergySupplierPal.Application.UnitTest.csproj", "{CCF17533-946B-4AA1-A356-DADAF1834E24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mizuho.MyEnergySupplierPal.Infrastructure.UnitTest", "test\Mizuho.MyEnergySupplierPal.Infrastructure.UnitTest\Mizuho.MyEnergySupplierPal.Infrastructure.UnitTest.csproj", "{84182A34-56B7-411F-906E-65492AD4FE00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mizuho.MyEnergySupplierPal.AppConsole.UnitTest", "test\Mizuho.MyEnergySupplierPal.AppConsole.UnitTest\Mizuho.MyEnergySupplierPal.AppConsole.UnitTest.csproj", "{8556E6E3-D95E-4ED8-B261-0813F12D08EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Santander.HackerNews.Application", "src\Santander.HackerNews.Application\Santander.HackerNews.Application.csproj", "{E6DF64A5-5F1A-41C8-8CC5-0F97C60D0527}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Santander.HackerNews.Domain", "src\Santander.HackerNews.Domain\Santander.HackerNews.Domain.csproj", "{124DA30C-8811-4A86-8B68-ABDFD60D4701}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Santander.HackerNews.Infrastructure", "src\Santander.HackerNews.Infrastructure\Santander.HackerNews.Infrastructure.csproj", "{7729929C-9549-40CB-BEEE-B57FE135A222}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Santander.HackerNews.Api", "src\Santander.HackerNews.Api\Santander.HackerNews.Api.csproj", "{C340CAC3-9251-4413-B6BF-DC4EC6C752A4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{41685A37-0F14-42BD-A3DB-F3FCF7E30752}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41685A37-0F14-42BD-A3DB-F3FCF7E30752}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41685A37-0F14-42BD-A3DB-F3FCF7E30752}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41685A37-0F14-42BD-A3DB-F3FCF7E30752}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCF17533-946B-4AA1-A356-DADAF1834E24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCF17533-946B-4AA1-A356-DADAF1834E24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCF17533-946B-4AA1-A356-DADAF1834E24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCF17533-946B-4AA1-A356-DADAF1834E24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84182A34-56B7-411F-906E-65492AD4FE00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84182A34-56B7-411F-906E-65492AD4FE00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84182A34-56B7-411F-906E-65492AD4FE00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84182A34-56B7-411F-906E-65492AD4FE00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8556E6E3-D95E-4ED8-B261-0813F12D08EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8556E6E3-D95E-4ED8-B261-0813F12D08EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8556E6E3-D95E-4ED8-B261-0813F12D08EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8556E6E3-D95E-4ED8-B261-0813F12D08EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6DF64A5-5F1A-41C8-8CC5-0F97C60D0527}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6DF64A5-5F1A-41C8-8CC5-0F97C60D0527}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6DF64A5-5F1A-41C8-8CC5-0F97C60D0527}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6DF64A5-5F1A-41C8-8CC5-0F97C60D0527}.Release|Any CPU.Build.0 = Release|Any CPU
+		{124DA30C-8811-4A86-8B68-ABDFD60D4701}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{124DA30C-8811-4A86-8B68-ABDFD60D4701}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{124DA30C-8811-4A86-8B68-ABDFD60D4701}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{124DA30C-8811-4A86-8B68-ABDFD60D4701}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7729929C-9549-40CB-BEEE-B57FE135A222}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7729929C-9549-40CB-BEEE-B57FE135A222}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7729929C-9549-40CB-BEEE-B57FE135A222}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7729929C-9549-40CB-BEEE-B57FE135A222}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C340CAC3-9251-4413-B6BF-DC4EC6C752A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C340CAC3-9251-4413-B6BF-DC4EC6C752A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C340CAC3-9251-4413-B6BF-DC4EC6C752A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C340CAC3-9251-4413-B6BF-DC4EC6C752A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{41685A37-0F14-42BD-A3DB-F3FCF7E30752} = {69B5B8DE-321A-4D70-9954-A86CD5DFD2E9}
+		{CCF17533-946B-4AA1-A356-DADAF1834E24} = {69B5B8DE-321A-4D70-9954-A86CD5DFD2E9}
+		{84182A34-56B7-411F-906E-65492AD4FE00} = {69B5B8DE-321A-4D70-9954-A86CD5DFD2E9}
+		{8556E6E3-D95E-4ED8-B261-0813F12D08EA} = {69B5B8DE-321A-4D70-9954-A86CD5DFD2E9}
+		{E6DF64A5-5F1A-41C8-8CC5-0F97C60D0527} = {3E84047A-3B48-45D2-8812-A2D5099A9731}
+		{124DA30C-8811-4A86-8B68-ABDFD60D4701} = {3E84047A-3B48-45D2-8812-A2D5099A9731}
+		{7729929C-9549-40CB-BEEE-B57FE135A222} = {3E84047A-3B48-45D2-8812-A2D5099A9731}
+		{C340CAC3-9251-4413-B6BF-DC4EC6C752A4} = {3E84047A-3B48-45D2-8812-A2D5099A9731}
+	EndGlobalSection
+EndGlobal
