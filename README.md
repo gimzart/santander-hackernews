@@ -20,6 +20,7 @@ Justification and things to consider
 - Application - holds the business logic
 - Domain - should contain the domain objects, for simplicity it contains Item.cs which should be only available in infrastructure layer and then mapped to domain entity for processing
 - Infrastructure - all external dependencies for the solution, could be db access, external services etc.
+6. The security aspects of the api are out of scope
 
 There could be a couple of possible solutions to limit the number of concurrent requests to fetch the items
 
