@@ -1,4 +1,5 @@
 
+using Microsoft.OpenApi.Models;
 using Santander.HackerNews.Api.Handlers;
 using Santander.HackerNews.Application;
 using Santander.HackerNews.Infrastructure;
@@ -17,6 +18,19 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddProblemDetails();
 
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1",
+        new OpenApiInfo
+        {
+            Title = "Hacker News Api - V1",
+            Version = "v1"
+        }
+     );
+
+    var filePath = Path.Combine(System.AppContext.BaseDirectory, "Santander.HackerNews.Api.xml");
+    c.IncludeXmlComments(filePath);
+});
 
 var app = builder.Build();
 

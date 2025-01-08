@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Santander.HackerNews.Application.Exceptions;
 
 namespace Santander.HackerNews.Api.Handlers;
 
@@ -21,7 +22,12 @@ public class GlobalExceptionHandler : IExceptionHandler
 
         var problemDetails = new ProblemDetails
         {
-            Status = StatusCodes.Status500InternalServerError,
+            Status = exception switch
+            {
+                NotFoundException => StatusCodes.Status404NotFound,
+                ValidationException => StatusCodes.Status400BadRequest,
+                _ => StatusCodes.Status500InternalServerError
+            },
             Title = "Server error",
             Detail = exception.Message
         };

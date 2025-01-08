@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Santander.HackerNews.Application.Exceptions;
 using Santander.HackerNews.Application.ExternalServices;
 using Santander.HackerNews.Application.Responses;
 
@@ -16,16 +17,20 @@ internal class GetBestStoriesQueryHandler : IRequestHandler<GetBestStoriesQuery,
     {
         var itemsIds = await _firebaseHackerNewsExternalService.GetBestStories(cancellationToken);
 
+        if(itemsIds is null || !itemsIds.Any())
+        {
+            throw new NotFoundException("No items found to process");
+        }
+
         var tasks = itemsIds.Select(i => _firebaseHackerNewsExternalService.GetStoryById(i, cancellationToken)).ToList();
 
         await Task.WhenAll(tasks);
 
-        var all = tasks.Select(t => t.Result).ToList();
-
-        var a = all.Where(x => x is not null).OrderByDescending(x => x.Score).Take(request.NumberOfItems)
+        return tasks.Select(t => t.Result).ToList()
+            .Where(x => x is not null)
+            .OrderByDescending(x => x.Score)
+            .Take(request.NumberOfItems)
             .Select(x => new ItemResponse(x.Title, x.Url, x.By, DateTimeOffset.FromUnixTimeSeconds(x.Time).DateTime.ToString("s"), x.Score, x.Descendants))
             .ToList();
-
-        return a;
     }
 }

@@ -8,6 +8,7 @@ internal class FirebaseHackerNewsExternalService : IFirebaseHackerNewsExternalSe
 {
     private readonly HttpClient _httpClient;
     private readonly ILogger<FirebaseHackerNewsExternalService> _logger;
+    private static SemaphoreSlim _semaphore = new SemaphoreSlim(500, 500);
 
     public FirebaseHackerNewsExternalService(HttpClient httpClient, ILogger<FirebaseHackerNewsExternalService> logger)
     {
@@ -25,7 +26,6 @@ internal class FirebaseHackerNewsExternalService : IFirebaseHackerNewsExternalSe
         try
         {
             var item = await GetAsync<Item>($"item/{id}.json", cancellationToken);
-            if (item.Id == 42575990) throw new ApplicationException("asdf");
             return item;
         }
         catch (Exception ex)
@@ -37,7 +37,17 @@ internal class FirebaseHackerNewsExternalService : IFirebaseHackerNewsExternalSe
 
     protected async Task<TResult?> GetAsync<TResult>(string path, CancellationToken cancellationToken)
     {
-        var response = await _httpClient.GetAsync(path, cancellationToken);
+        HttpResponseMessage? response;
+        try
+        {
+            await _semaphore.WaitAsync(cancellationToken);
+            response = await _httpClient.GetAsync(path, cancellationToken);
+        }
+        finally
+        {
+            _semaphore.Release();
+        }
+
         if (response.IsSuccessStatusCode)
         {
             return await DesrializeContent<TResult>(response, cancellationToken);
