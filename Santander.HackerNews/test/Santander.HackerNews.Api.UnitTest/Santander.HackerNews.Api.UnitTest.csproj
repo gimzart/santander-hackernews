@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Mizuho.MyEnergySupplierPal.AppConsole\Mizuho.MyEnergySupplierPal.AppConsole.csproj" />
+    <ProjectReference Include="..\..\src\Santander.HackerNews.AppConsole\Santander.HackerNews.AppConsole.csproj" />
   </ItemGroup>
 
   <ItemGroup>

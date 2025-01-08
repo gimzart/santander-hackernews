@@ -1,6 +1,9 @@
 # santander-hackernews
 Repository for developer task based on hacker news api
 
+1. The solution contains tests for only one class, in real world project all layers should be covered in unit tests.
+1. 
+
 
 1. The solution uses clean architecture structure for projects with layers, this is a bit overkill for the task, but I decided to follow such approach as this is usually ok for building microservices
 - Api - thin layer of controllers and application setup
